@@ -1,13 +1,10 @@
 import tkinter as tk
  
 baseGround = tk.Tk()
-# メインウィンドウを作成
 
 baseGround.geometry('500x50')
-# ウィンドウのサイズを設定
  
 baseGround.title('FxxkDocomoApps')
-# ウィンドウのタイトルを設定
 
 def btn_click():    
     label1 = tk.Label(baseGround, text='Selected Uninstall').place(x=290,y=15)
