@@ -934,9 +934,9 @@ def btn4_click():
 def btn_click_adb():
     webbrowser.open('https://dl.google.com/android/repository/platform-tools_r33.0.1-darwin.zip')
 
-label1 = tk.Label(baseGround, text='このソフトウェアを使用するにはADBが必要です。').place(x=255,y=30)
+label1 = tk.Label(baseGround, text='このソフトウェアを使用するにはADBが必要です。').place(x=10,y=30)
 button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 445, y=28)
+    baseGround, text='Download', command=btn_click_adb).place(x= 300, y=28)
 
 button = tk.Button(
     baseGround, text='Uninstall', command=btn_click).place(x= 10, y=10)
