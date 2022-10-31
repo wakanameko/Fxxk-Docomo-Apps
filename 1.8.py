@@ -5,6 +5,9 @@ import platform
 import os
 from tkinter import messagebox
 
+print('FxxkDocomoApps_V1.8')
+print('Developer @wakanameko2')
+
 if os.name == 'posix':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
 if os.name == 'linux':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
 if os.name == 'darwin':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
@@ -13,6 +16,7 @@ ur = platform.uname()
 print(ur.system)
 print(ur.release)
 print(ur.processor)
+print(ur.version)
 
 if ur.release == 'xp':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == '2000':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
@@ -20,17 +24,30 @@ if ur.release == 'me':messagebox.showerror('Attention','このバージョンの
 if ur.release == '98':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == '95':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 
-print('FxxkDocomoApps_V1.8')
-print('Developer @wakanameko2')
-
 baseGround = tk.Tk()
 
 if ur.release == 'vista':baseGround.geometry('600x75')
 if ur.release == '7':baseGround.geometry('600x75')
 if ur.release == '8':baseGround.geometry('600x75')
 if ur.release == '8.1':baseGround.geometry('600x75')
-if ur.release == '10':baseGround.geometry('500x50')
-if ur.release == '11':baseGround.geometry('500x50')
+#windows10 Home・Pro・Enterprise・Education ･ Enterprise ･ IoT Enterprise
+if ur.version == '10.0.10240':baseGround.geometry('500x50')
+if ur.version == '10.0.10586':baseGround.geometry('500x50')
+if ur.version == '10.0.14393':baseGround.geometry('500x50')
+if ur.version == '10.0.15063':baseGround.geometry('500x50')
+if ur.version == '10.0.16299':baseGround.geometry('500x50')
+if ur.version == '10.0.17134':baseGround.geometry('500x50')
+if ur.version == '10.0.17763':baseGround.geometry('500x50')
+if ur.version == '10.0.18362':baseGround.geometry('500x50')
+if ur.version == '10.0.18363':baseGround.geometry('500x50')
+if ur.version == '10.0.19041':baseGround.geometry('500x50')
+if ur.version == '10.0.19042':baseGround.geometry('500x50')
+if ur.version == '10.0.19043':baseGround.geometry('500x50')
+if ur.version == '10.0.19044':baseGround.geometry('500x50')
+if ur.version == '10.0.19045':baseGround.geometry('500x50')
+#windows11 Home・Pro・Enterprise・Education ･ Pro Education  
+if ur.version == '10.0.22000':baseGround.geometry('500x50')
+if ur.version == '10.0.22621':baseGround.geometry('500x50')
 
 baseGround.title('FxxkDocomoApps')
 
