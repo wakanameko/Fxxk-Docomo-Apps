@@ -8,9 +8,7 @@ from tkinter import messagebox
 print('FxxkDocomoApps_V1.8')
 print('Developer @wakanameko2')
 
-if os.name == 'posix':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
-if os.name == 'linux':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
-if os.name == 'darwin':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
+if not os.name == 'nt':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
 
 ur = platform.uname()
 print(ur.system)
@@ -18,6 +16,7 @@ print(ur.release)
 print(ur.processor)
 print(ur.version)
 
+if ur.release == 'vista':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == 'xp':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == '2000':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == 'me':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
@@ -26,7 +25,6 @@ if ur.release == '95':messagebox.showerror('Attention','このバージョンの
 
 baseGround = tk.Tk()
 
-if ur.release == 'vista':baseGround.geometry('600x75')
 if ur.release == '7':baseGround.geometry('600x75')
 if ur.release == '8':baseGround.geometry('600x75')
 if ur.release == '8.1':baseGround.geometry('600x75')
@@ -977,15 +975,12 @@ def btn4_click():
 def btn_click_adb():
     webbrowser.open('https://dl.google.com/android/repository/platform-tools_r33.0.1-darwin.zip')
 
-if ur.release == 'vista':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=253,y=48)
 if ur.release == '7':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=253,y=48)
 if ur.release == '8':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=255,y=50)
 if ur.release == '8.1':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
 if ur.release == '10':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=255,y=30)
 if ur.release == '11':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=255,y=30)
 
-if ur.release == 'vista':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 530, y=41)
 if ur.release == '7':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 530, y=41)
 if ur.release == '8':button_adb = tk.Button(
