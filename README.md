@@ -28,3 +28,7 @@ AndroidのDocomoのゴミアプリを消すことだけに集中したソフト�
 |Windows3.x    |WindowsNTServerVersion3.51       |                   |
 |Windows2.x    |WindowsNTServerVersion3.5        |                   |
 |Windows1.x    |WindowsNTAdvancedServerVersion3.1|                   |
+
+# 使い方 - How to Use
+ボタンを押したらいいと思うよ。
+Adbがインストールされていない場合は、UI右下のダウンロードボタンからインストールしてください。インストール方法は調べてください。
