@@ -18,7 +18,7 @@ AndroidのDocomoのゴミアプリを消すことだけに集中したソフト�
 # 動作未確認/正常動作しないOS
 |Windows       |WindowsServer                    |WindowsHomeServer  |
 |:------------:|:-------------------------------:|:-----------------:|
-|WindowsVita   |WindowsServer2008                |WindowsHomeServer  |
+|WindowsVista  |WindowsServer2008                |WindowsHomeServer  |
 |WindowsXP     |WindowsServer2003R2              |                   |
 |Windows me    |WindowsServer2003                |                   |
 |Windows2000   |WindowsDatacenterServer          |                   |
