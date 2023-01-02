@@ -9,9 +9,7 @@ import os
 import sys
 from tkinter import messagebox
 
-if os.name == 'posix':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
-if os.name == 'linux':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
-if os.name == 'darwin':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
+if not os.name == 'nt':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
 
 ur = platform.uname()
 print(ur.system)
@@ -25,7 +23,7 @@ if ur.release == 'me':messagebox.showerror('Attention','このバージョンの
 if ur.release == '98':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == '95':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 
-print('FxxkDocomoApps_V1.8')
+print('FxxkDocomoApps_V2.0')
 print('Developer @wakanameko2')
 
 baseGround = tk.Tk()
@@ -335,9 +333,9 @@ baseGround.tk.call('wm', 'iconphoto', baseGround._w, tk.PhotoImage(data=data))
 def btn_click():    
     label1 = tk.Label(baseGround, text='Selected Uninstall').place(x=290,y=15)
     print('selected Uninstall.')
-    #ret = messagebox.askyesno('確認','おサイフケータイ機能を残しますか？')
+    osaifuUninst = messagebox.askyesno('確認','おサイフケータイ機能を残しますか？')
     
-    #if ret == True:()
+    if osaifuUninst == True:()
     print('selected yes')
     import subprocess
     cmd = ('adb', 'shell', 'pm', 'uninstall', '-k', '--user', '0', 'jp.co.nttdocomo.bridgelauncher')
@@ -475,8 +473,8 @@ def btn_click():
     print('All_Done')
     label1 = tk.Label(baseGround, text='All Done              ').place(x=290,y=15)
 
-    #if not ret == True:()
-    #print('selected no')
+    else:()
+    print('selected no')
     import subprocess
     cmd = ('adb', 'shell', 'pm', 'uninstall', '-k', '--user', '0', 'jp.co.nttdocomo.bridgelauncher')
     subprocess.call(cmd)
@@ -1110,21 +1108,7 @@ if ur.release == '7':label1 = tk.Label(baseGround, text='このソフトフェ�
 if ur.release == '8':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
 if ur.release == '8.1':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
 if ur.release == '2012ServerR2':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
-#Windows10
-if ur.version == '10.0.10240':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.10586':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.14393':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.15063':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.16299':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.17134':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.17763':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.18362':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.18363':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.19041':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.19042':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.19043':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.19044':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
-if ur.version == '10.0.19045':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
+if ur.release == '10':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
 #Windows11
 if ur.version == '10.0.22000':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
 if ur.version == '10.0.22621':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
@@ -1139,34 +1123,7 @@ if ur.release == '8.1':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 525, y=43)
 if ur.release == '2012ServerR2':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 525, y=43)
-#Windows10
-if ur.version == '10.0.10240':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.10586':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.14393':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.15063':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.16299':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.17134':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.17763':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.18362':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.18363':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.19041':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.19042':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.19043':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.19044':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
-if ur.version == '10.0.19045':button_adb = tk.Button(
+if ur.release == '10':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
 #Windows11
 if ur.version == '10.0.22000':button_adb = tk.Button(
