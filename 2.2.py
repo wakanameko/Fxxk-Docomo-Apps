@@ -1,6 +1,4 @@
 # coding: UTF-8
-#from distutils.cmd import Command
-#from email.mime import base
 import tkinter as tk
 from turtle import goto
 import webbrowser
