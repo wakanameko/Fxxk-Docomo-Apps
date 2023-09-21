@@ -1,6 +1,6 @@
 # coding: UTF-8
-from distutils.cmd import Command
-from email.mime import base
+#from distutils.cmd import Command
+#from email.mime import base
 import tkinter as tk
 from turtle import goto
 import webbrowser
@@ -23,7 +23,7 @@ if ur.release == 'me':messagebox.showerror('Attention','このバージョンの
 if ur.release == '98':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 if ur.release == '95':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 
-print('FxxkDocomoApps_V2.0')
+print('FxxkDocomoApps_V2.2')
 print('Developer @wakanameko2')
 
 baseGround = tk.Tk()
