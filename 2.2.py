@@ -34,7 +34,7 @@ baseGround = tk.Tk()
 if ur.release == ('vista' or '7' or '8' or '8.1' or '2012ServerR2'):baseGround.geometry('600x75')
 elif ur.release == '10':baseGround.geometry('525x60')
 #Windows11
-if ur.version == '10.0.22621':baseGround.geometry('575x70')
+if ur.version >= '10.0.22000':baseGround.geometry('575x70')
 
 baseGround.title(APPNAME)
 
