@@ -10,38 +10,33 @@ from tkinter import messagebox
 if not os.name == 'nt':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
 
 #########
-#SETUP
+# SETUP
 #########
+APPNAME = "FxxkDocomoApps"
+VERSION = "2.2"
+DEVELOPER = "wakanameko2"
+
+print(APPNAME + "_v" + VERSION + "\nDeveloper " + DEVELOPER)
+
 ur = platform.uname()
 print(ur.system)
 print(ur.release)
 print(ur.version)
 print(ur.processor)
 
-if ur.release == 'xp':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
-if ur.release == '2000':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
-if ur.release == 'me':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
-if ur.release == '98':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
-if ur.release == '95':messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
-
-print('FxxkDocomoApps_V2.2')
-print('Developer @wakanameko2')
+if ur.release == ('xp' or '2000' or'me' or '98' or '95'):messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 
 #########
-#make main window
+# make main window
 #########
 baseGround = tk.Tk()
 
-if ur.release == 'vista':baseGround.geometry('600x75')
-if ur.release == '7':baseGround.geometry('600x75')
-if ur.release == '8':baseGround.geometry('600x75')
-if ur.release == '8.1':baseGround.geometry('600x75')
-if ur.release == '2012ServerR2':baseGround.geometry('600x75')
-if ur.release == '10':baseGround.geometry('525x60')
+if ur.release == ('vista' or '7' or '8' or '8.1' or '2012ServerR2'):baseGround.geometry('600x75')
+elif ur.release == '10':baseGround.geometry('525x60')
 #Windows11
 if ur.version == '10.0.22621':baseGround.geometry('575x70')
 
-baseGround.title('FxxkDocomoApps')
+baseGround.title(APPNAME)
 
 baseGround.resizable(width = False, height = False)
 
@@ -496,7 +491,7 @@ def btn_click():
       subprocess.call(cmd)
       cmd = ('adb', 'shell', 'pm', 'uninstall', '-k', '--user', '0', 'com.felicanetworks.mfm.main')
       subprocess.call(cmd)
-      
+
     print('All_Done')
     label1 = tk.Label(baseGround, text='All Done                    ').place(x=290,y=15)
 
@@ -797,7 +792,7 @@ def btn3_click():
     cmd = ('adb', 'shell', 'pm', 'disable-user', '--user', '0', 'com.nttdocomo.android.local.guide02')
     subprocess.call(cmd)
     cmd = ('adb', 'shell', 'pm', 'disable-user', '--user', '0', 'com.nttdocomo.android.store.appssha2')
-    
+
     if not osaifuDisable == True:
       subprocess.call(cmd)
       cmd = ('adb', 'shell', 'pm', 'disable-user', '--user', '0', 'com.nttdocomo.android.tapandpay')
@@ -815,7 +810,7 @@ def btn3_click():
       cmd = ('adb', 'shell', 'pm', 'disable-user', '--user', '0', 'com.nttdocomo.osaifu.tsmproxy')
       subprocess.call(cmd)
       cmd = ('adb', 'shell', 'pm', 'disable-user', '--user', '0', 'jp.id_credit_sp.android')
-    
+
     print('All_Done')
     label1 = tk.Label(baseGround, text='All Done              ').place(x=290,y=15)
 
@@ -979,27 +974,18 @@ def btn4_click():
 def btn_click_adb():
     webbrowser.open('https://dl.google.com/android/repository/platform-tools_r33.0.1-darwin.zip')
 
-if ur.release == 'vista':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=253,y=48)
-if ur.release == '7':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=253,y=48)
-if ur.release == '8':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
-if ur.release == '8.1':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
-if ur.release == '2012ServerR2':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
-if ur.release == '10':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
+if ur.release == ('vista' or '7'):label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=253,y=48)
+elif ur.release == ('8' or '8.1' or '2012ServserR2'):label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
+elif ur.release == '10':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
 #Windows11
 if ur.version == '10.0.22000':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
 if ur.version == '10.0.22621':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
 
-if ur.release == 'vista':button_adb = tk.Button(
+if ur.release == ('vista' or '7'):button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 530, y=41)
-if ur.release == '7':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 530, y=41)
-if ur.release == '8':button_adb = tk.Button(
+elif ur.release == ('8' or '8.1' or '2012ServserR2'):button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 525, y=43)
-if ur.release == '8.1':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 525, y=43)
-if ur.release == '2012ServerR2':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 525, y=43)
-if ur.release == '10':button_adb = tk.Button(
+elif ur.release == '10':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
 #Windows11
 if ur.version == '10.0.22000':button_adb = tk.Button(
