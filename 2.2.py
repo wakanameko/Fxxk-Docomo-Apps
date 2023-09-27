@@ -7,8 +7,6 @@ import os
 import sys
 from tkinter import messagebox
 
-if not os.name == 'nt':messagebox.showerror('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
-
 #########
 # SETUP
 #########
@@ -18,11 +16,10 @@ DEVELOPER = "wakanameko2"
 
 print(APPNAME + "_v" + VERSION + "\nDeveloper " + DEVELOPER)
 
+if not os.name == 'nt':messagebox.showinfo('Attention','Windows以外のOSでの実行は想定されていません。エラーが発生しても自己責任でお願いします。')
+
 ur = platform.uname()
-print(ur.system)
-print(ur.release)
-print(ur.version)
-print(ur.processor)
+print(ur.system + '\n' + ur.release + '\n' + ur.version + '\n' + ur.processor)
 
 if ur.release == ('xp' or '2000' or'me' or '98' or '95'):messagebox.showerror('Attention','このバージョンのWindowsは対応していません。')
 
@@ -978,8 +975,8 @@ if ur.release == ('vista' or '7'):label1 = tk.Label(baseGround, text='このソ�
 elif ur.release == ('8' or '8.1' or '2012ServserR2'):label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=290,y=48)
 elif ur.release == '10':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=225,y=36)
 #Windows11
-if ur.version == '10.0.22000':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
-if ur.version == '10.0.22621':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
+if ur.version >= '10.0.22000':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
+#if ur.version == '10.0.22621':label1 = tk.Label(baseGround, text='このソフトフェアを使用するにはADBが必要です。').place(x=270,y=43)
 
 if ur.release == ('vista' or '7'):button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 530, y=41)
@@ -988,9 +985,7 @@ elif ur.release == ('8' or '8.1' or '2012ServserR2'):button_adb = tk.Button(
 elif ur.release == '10':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 450, y=30)
 #Windows11
-if ur.version == '10.0.22000':button_adb = tk.Button(
-    baseGround, text='Download', command=btn_click_adb).place(x= 500, y=40)
-if ur.version == '10.0.22621':button_adb = tk.Button(
+if ur.version >= '10.0.22000':button_adb = tk.Button(
     baseGround, text='Download', command=btn_click_adb).place(x= 500, y=40)
 
 button = tk.Button(
