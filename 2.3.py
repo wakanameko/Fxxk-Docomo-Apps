@@ -3,7 +3,6 @@ import tkinter as tk
 import webbrowser
 import platform
 import os
-import sys
 from tkinter import messagebox
 import subprocess
 
